@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.cwcenter.mybatis.dao.PersonDao">
+
+    <insert id="insert" parameterType="top.cwcenter.mybatis.po.PersonPO">
+        insert into person (name, age)
+        values (#{name}, #{age})
+    </insert>
+
+    <delete id="deleteById" parameterType="long">
+        delete
+        from person
+        where id = #{id}
+    </delete>
+
+    <update id="updateById" parameterType="top.cwcenter.mybatis.po.PersonPO">
+        update person
+        set name = #{name},
+            age  = #{age}
+        where id = #{id}
+    </update>
+
+    <select id="selectById" parameterType="long" resultType="top.cwcenter.mybatis.po.PersonPO">
+        select *
+        from person
+        where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="top.cwcenter.mybatis.po.PersonPO">
+        select *
+        from person
+    </select>
+
+</mapper>
