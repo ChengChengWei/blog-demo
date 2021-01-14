@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.cwcenter.dynamic.dao.CourseDao">
+
+    <insert id="insert" parameterType="top.cwcenter.dynamic.po.CoursePO">
+        insert into course (name, teacher_name)
+        values (#{name}, #{teacherName})
+    </insert>
+
+    <select id="selectAll" resultType="top.cwcenter.dynamic.po.CoursePO">
+        select *
+        from course
+    </select>
+
+</mapper>
